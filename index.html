@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube</title>
+    <style>
+body {
+    padding-top: 250px;
+    padding-left: 350px;
+}
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 800px;
+}
+.cube {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    animation: spin 10s linear 0s infinite forwards;
+}
+.cube-face {
+    width: 200px;
+    height: 200px;
+    color: rgba(41, 41, 41, 0.8);
+    border: 8px solid rgb(16, 0, 46);
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.front{
+    transform: translateZ(100px);
+}
+.back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.right{
+    transform: rotateY(90deg) translateZ(100px);
+}
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+} 
+    </style>
+</head>
+<body>
+    <figure class="scene">
+
+        <div class="cube">
+            <div class="cube-face front">NITIN</div>
+            <div class="cube-face back">NITIN</div>
+            <div class="cube-face left">NITIN</div>
+            <div class="cube-face right">NITIN</div>
+            <div class="cube-face top">NITIN</div>
+            <div class="cube-face bottom">NITIN</div>
+        </div>
+
+    </figure>
+</body>
+</html>
